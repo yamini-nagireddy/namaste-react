@@ -15,7 +15,7 @@
 - What is `JSX` ?
 - Superpowers of `JSX`
 - Role of `type` attribute in script tag? What options can I use there?
-- {TitleComponent} vs <TitleComponent/> vs <TitleComponent><TitleComponent/> in JSX
+- {TitleComponent} vs `<TitleComponent/>` vs `<TitleComponent><TitleComponent/>` in JSX
   
 ## Coding Assignment-
 - Create a Nested header Element using React.createElement(h1,h2,h3 inside a div with class "title")
