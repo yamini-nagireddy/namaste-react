@@ -75,13 +75,13 @@ Conditional rendering is the process of displaying different content based on ce
 function Greeting(props) {
   const isLoggedIn = props.isLoggedIn;
   return (
-    <div>
+    `<div>
       {isLoggedIn ? (
         <h1>Welcome back!</h1>
       ) : (
         <h1>Please sign up.</h1>
       )}
-    </div>
+    </div>`
   );
 }
 In the above code, we used the ternary operator isLoggedIn ? ... : ... to conditionally render the message depending on whether the user is logged in or not.
