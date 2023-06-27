@@ -49,11 +49,13 @@ JavaScript Expression:
 An expression is a piece of code that produces a value. It can be as simple as a single constant or variable, or it can be a more complex combination of operators, function calls, and operands. Expressions can be used in various contexts, such as assigning a value to a variable, passing arguments to a function, or as a part of a larger expression.
 
 Examples of JavaScript expressions:
+```
 5 + 3 (Addition expression)
 x * 2 (Multiplication expression)
 myFunction() (Function call expression)
 a === b (Comparison expression)
 true (Boolean literal expression)
+```
 
 Expressions can also include more complex constructs like conditional (ternary) operators, logical operators, array literals, object literals, and more.
 
@@ -61,17 +63,19 @@ JavaScript Statement:
 A statement is a unit of code that performs a specific action. Unlike expressions, statements don't produce a value on their own. Instead, they are executed for their side effects, which can include modifying variables, controlling program flow, or interacting with the environment. Statements often consist of keywords, expressions, and control structures.
 
 Examples of JavaScript statements:
+```
 var x = 5; (Variable declaration and assignment statement)
 if (x > 0) { ... } (Conditional statement)
 for (var i = 0; i < 10; i++) { ... } (Loop statement)
 return x; (Return statement in a function)
+```
 Statements are executed sequentially unless controlled by conditional or looping structures. They are used to define the structure and behavior of programs.
 
 In summary, expressions in JavaScript produce values, while statements perform actions but don't produce values. Expressions can be used within statements to compute values or make decisions.
 
 ## - What is `Conditional Rendering`, explain with a code example.
 Conditional rendering is the process of displaying different content based on certain conditions or states. It allows you to create dynamic user interfaces that can adapt to changes in data and user interactions.
-
+```
 function Greeting(props) {
   const isLoggedIn = props.isLoggedIn;
   return (
@@ -84,6 +88,7 @@ function Greeting(props) {
     </div>`
   );
 }
+```
 In the above code, we used the ternary operator isLoggedIn ? ... : ... to conditionally render the message depending on whether the user is logged in or not.
 
 ## - What is `CORS`?
