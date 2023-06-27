@@ -1,7 +1,8 @@
 ## Theory - 
 ## - What are various ways to add images into our App ? Explain with Code examples ?
-1. Importing Images: Place your images in the src folder of your React app. Import the image using the import statement and use it as a component. 
-`import React from 'react';
+1. Importing Images: Place your images in the src folder of your React app. Import the image using the import statement and use it as a component.
+
+import React from 'react';
 import logo from './images/logo.png'; // Path to your image file
 
 const App = () => {
@@ -13,17 +14,17 @@ const App = () => {
 };
 
 export default App;
-`
+
 2. Adding Images in CSS: Import the image in your CSS file and use it as a background image or in an img selector.
-`/* styles.css */
+/* styles.css */
 .logo {
   background-image: url('./images/logo.png'); /* Path to your image file */
   width: 200px;
   height: 200px;
 }
-`
+
 3. External Image URLs: You can also use external image URLs directly in your img component.
-`import React from 'react';
+import React from 'react';
 
 const App = () => {
   return (
@@ -34,7 +35,7 @@ const App = () => {
 };
 
 export default App;
-`
+
 
 ## - What would happen if we do `console.log(useState())`?
 It would log an array containing two elements to the console. The first element is the current state value, and the second element is a function that allows you to update the state.
