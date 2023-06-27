@@ -10,12 +10,14 @@ Babel compiles JSX down to React.createElement() calls.
 ## - Superpowers of `JSX`
 1. JSX as variables
 JSX elements can act as values for identifiers. The following example shows how to declare a variable with a JSX element as the value.
-const hello = <h1>Hello, World!</h1>;
+```const hello = <h1>Hello, World!</h1>; ```
 
 2. Expressions in JSX
 JSX supports all JavaScript Expressions by wrapping them inside a pair of curly brackets. The following example displays how to use a primary expression and a combination of object access and function invocation expression.
+```
 const name = "Danyal";
 const hello = <h1>Hello, {name}</h1>;
+```
 
 const time = "Current time: {Clock.getUserTimeZoneCurrentTime()}";
 Similarly, JSX elements are also expressions and can be be used in places such as control statements or loops.
@@ -23,15 +25,18 @@ Similarly, JSX elements are also expressions and can be be used in places such a
 
 4. Attributes in JSX
 JSX supports attributes the same way as HTML does except for the fact that attributes are written in camelCasing instead of kebab-casing for an attribute that spans multiple words.
+```
 <!-- HTML -->
 <img src="..path_to_img../img.jpg" accesskey="img" />
 
 {/* JSX */}
 const imgSrc = "..path_to_img../img.jpg";
 <img src={imgSrc} accessKey="img" />
+```
 
 6. Props in JSX
 The values assigned to each attribute are passed down as properties (props) to the React element. This enhances the power of JSX since they can now handle dynamic data to create React elements. The following example shows how a single Profile component can be used to create multiple dynamic instances.
+```
 {/* Creating Profile element using JSX */}
 <Profile name="Danyal" bio="I love developing cool apps" />
 <Profile name="Pikachu" bio="I love Pokémon as well" />
@@ -43,8 +48,10 @@ const Profile = (props) => (
     <p>{props.bio}</p>
   </section>
 );
+```
 
 7. Conditionally Rendering Components
+```
 {/* Creating Profile element using JSX */}
 
 <Profile />
@@ -59,7 +66,7 @@ const Profile = (props) => {
   return {heading};
 };
 
-
+```
 
 ## - Role of `type` attribute in script tag? What options can I use there?
 The type attribute in the <script> tag is used to specify or declare the MIME type (Multipurpose Internet Mail Extensions) of the content within the <script> element. It helps the browser understand how to interpret and execute the code contained in the script block. 
