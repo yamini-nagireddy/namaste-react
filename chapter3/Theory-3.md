@@ -81,7 +81,7 @@ When choosing a type attribute value, it's generally recommended to use "text/ja
 
 ## - `{TitleComponent}` vs `<TitleComponent/>` vs `<TitleComponent><TitleComponent/>` in JSX
 1. {TitleComponent}: It treats TitleComponent as a variable and inserts the component directly into the JSX code. 
-2. `<TitleComponent/>`: This syntax is used to render a functional component or a self-closing tag for a component that doesn't have any children. It's the most common way to render a functional component in JSX. 
-3.`<TitleComponent></TitleComponent>`: This syntax is used when you want to nest a component within another component as its children. It applies to both functional components and class components. The opening and closing tags of the parent component wrap around the child components.
+2. `<TitleComponent/>`: This syntax is used to render a functional component or a self-closing tag for a component that doesn't have any children. It's the most common way to render a functional component in JSX.
+3. `<TitleComponent></TitleComponent>`: This syntax is used when you want to nest a component within another component as its children. It applies to both functional components and class components. The opening and closing tags of the parent component wrap around the child components.
 `<TitleComponent/>` and `<TitleComponent><TitleComponent/>` are essentially same if there is no child component wrapped between `<TitleComponent><TitleComponent/>`. 
 
