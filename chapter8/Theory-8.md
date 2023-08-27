@@ -43,14 +43,14 @@ const router = createBrowserRouter([
 - https://reactrouter.com/en/main/routers/create-memory-router
 
 ## - What is the order of life cycle method calls in `Class Based Components`?
-Mounting Phase:
+# Mounting Phase:
 - constructor(): This is called when the component is created, and it is the first method to be called in the component's lifecycle. You can initialize state and bind event handlers here.
 - render(): This method is required and is called to render the component's UI. It should be a pure function and should not modify state or interact with the DOM directly.
 - componentDidMount(): This is called immediately after the component is added to the DOM. It's a good place to perform side effects, like AJAX requests or setting up subscriptions.
-Updating Phase:
+# Updating Phase:
 - render(): The render method is called again to update the UI based on the new state and props.
 - componentDidUpdate(): This method is called after the component update is flushed to the DOM. It's a good place to perform side effects after a re-render, like updating the DOM or fetching new data based on state changes.
-Unmounting Phase:
+# Unmounting Phase:
 - componentWillUnmount(): This method is called right before the component is removed from the DOM. It's an ideal place to clean up any subscriptions, timers, or other resources that were set up in componentDidMount().
   
 ## - Why do we use `componentDidMount`?
