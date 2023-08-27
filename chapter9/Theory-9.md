@@ -42,15 +42,15 @@ function MyComponent() {
 ```
 
 ## - Advantages and Disadvantages of using this `code splitting pattern`?
-Advantages:
+1. Advantages:
 - Improved Initial Loading Time: Code splitting helps reduce the initial bundle size of your application. By loading only essential components on the initial page load and deferring the loading of non-essential components, you can significantly improve the time it takes for the application to become interactive.
 - Optimized Resource Usage: Code splitting allows you to load only the code that is necessary for the current user flow, which can lead to more efficient resource usage. Components that are not needed right away are loaded later when they are required, reducing unnecessary memory consumption and enhancing the application's overall performance.
 - Better User Experience: By displaying loading indicators or fallback content (e.g., "Loading...") while lazy-loaded components are being fetched, you can provide a better user experience
 - Easier Code Maintenance: Code splitting promotes better code organization and maintainability. By breaking down the application into smaller, manageable chunks, it becomes easier to understand, maintain, and update individual components.
-Disadvantages:
--Increased Complexity: Code splitting introduces some complexity to the application. Developers need to manage the asynchronous loading of components, handle potential errors, and design the UI to handle loading states gracefully.
--Potential Network Overhead: Lazy loading components mean that additional requests are made to the server to fetch the deferred parts of the application. This can introduce some network overhead, although modern bundlers and caching mechanisms help mitigate this to a large extent.
--Not Always Suitable: Code splitting is not always suitable for every type of application. For smaller applications or applications with minimal code, the benefits of code splitting might not be as significant 
+2. Disadvantages:
+- Increased Complexity: Code splitting introduces some complexity to the application. Developers need to manage the asynchronous loading of components, handle potential errors, and design the UI to handle loading states gracefully.
+- Potential Network Overhead: Lazy loading components mean that additional requests are made to the server to fetch the deferred parts of the application. This can introduce some network overhead, although modern bundlers and caching mechanisms help mitigate this to a large extent.
+- Not Always Suitable: Code splitting is not always suitable for every type of application. For smaller applications or applications with minimal code, the benefits of code splitting might not be as significant 
 
 ## - When do we and why do we need suspense?
 Suspense in React handles asynchronous operations gracefully, such as code splitting and data fetching, by showing loading indicators or fallback content. Additionally, in concurrent mode, it helps avoid jarring visual updates by suspending certain parts of the application and providing a more seamless user experience.
