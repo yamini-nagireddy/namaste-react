@@ -11,26 +11,63 @@ If we don’t use ES6 in react, there is an alternative to perform. We use creat
 
 ## - {TitleComponent} vs `<TitleComponent/>` vs `<TitleComponent><TitleComponent/>` in JSX
 ## - How can I wrire comments in JSX?
-To write comments in React (JSX), we need to wrap them in curly braces. The curly braces tell the JSX parser to parse the code inside as JavaScript, and not a string. In the case of a single-line comment, You cannot have the ending bracket in the same line, because that will break everything.
+In JSX, which is used in React for building user interfaces, you can write comments just like in HTML, but there's a slight difference due to JSX's syntax. JSX comments are not exactly the same as traditional HTML comments. Here's how you can write comments in JSX:
+1. Single Line comments :
+```{/* This is a single-line comment in JSX */}```
+2. Multi Line Comments:
+```
+   {/*
+  This is a multi-line comment
+  in JSX.
+   */}
+```
+It's important to note that these comments are included in the final rendered output, even though they won't be visible in the browser or application interface.
 
 ## - What is `<React.Fragment><React.Fragment/>` and <></>?
 When should you use React Fragment. You should use the React Fragment when you want to add a parent element to fulfill the JSX syntax, but without introducing an extra node to the DOM. After compilation, the fragment component does not make it to the DOM—only the children element do.
 <> is the shorthand tag for React.Fragment. Fragment which allows us to group a list of elements without wrapping them in a new node. The only difference between them is that the shorthand version does not support the key attribute.
 
 ## - What is `Virtual DOM`?
-The virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. This process is called reconciliation.
+The Virtual DOM (VDOM) is a concept used in libraries and frameworks like React to improve the efficiency of updating the user interface (UI) and optimizing the rendering process. It's not unique to React, but React popularized its usage.
+
+Here's how it works:
+
+Real DOM vs. Virtual DOM:
+
+1. Real DOM: The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of a document as nodes and objects. When you make changes to the UI, the browser reflows and repaints the entire real DOM, which can be resource-intensive and slow.
+2. Virtual DOM: The Virtual DOM is a lightweight copy or representation of the real DOM. It's a JavaScript object that mirrors the structure of the actual DOM elements. When you make changes to the UI in React, these changes are first applied to the Virtual DOM, not the real DOM.
 
 ## - What is Reconciliation in React?
-Reconciliation is the process by which React updates the UI to reflect changes in the component state. The reconciliation algorithm is the set of rules that React uses to determine how to update the UI in the most efficient way possible.
+Reconciliation in React refers to the process by which React updates the user interface (UI) to reflect changes in the application's state. When the state of a React component changes, React needs to determine how to efficiently update the DOM to reflect those changes. This process involves comparing the previous state of the Virtual DOM (VDOM) with the new state and making necessary updates to the actual DOM elements.
 
 ## - What is React Fibre?
-React Fiber is a backwards compatible, complete rewrite of the React core. In other words, it is a reimplementation of older versions of the React reconciler.
-Introduced from React 16, Fiber Reconciler is the new reconciliation algorithm in React. The term Fiber refers to React's data structure (or) architecture, and originates from 'fiber' - a representation of a node of the DOM tree.
-A fiber is a JavaScript object, a unit of work. It represents a node of the DOM tree, or a React element, and contains data about a component, its I/P and O/P.
+React Fiber, often referred to simply as "Fiber," is an internal reimplementation of the React reconciliation algorithm. It was introduced by the React team to improve the performance and capabilities of React's core rendering process. Fiber is not a separate framework or library; it's an architectural change within the React codebase. 
+
+React before React Fiber
+1. React creates a tree of nodes when the UI renders for the very first time, with each node representing a React element. React creates a virtual tree (called virtualDOM), a clone of the rendered DOM tree.
+2. React then traverses the tree, updating the DOM on which classes or elements needed to be updated, whenever a change is required to be rendered. This is called Reconciliation.
+3. Essentially, after any UI update, React compares every node from two trees, and passes on the cumulative changes to the renderer.
+But, before Fiber, reconciliation and rendering to the DOM weren't separated, and React couldn't pause its traversal to jump to other renders in between. This often resulted in lagging inputs and choppy frame rates.
+
+In other words, with reconciliation forced to be without interruption (or "synchronous"), render changes couldn't be inserted in the middle. This prevented higher-priority changes from being made until the stack was completely cleared.
+
+Fiber brings in different levels of priority for updates in React. It breaks the computation of the component tree into nodes, or 'units' of work that it can commit at any time. This allows React to pause, resume or restart computation for various components.
+
+Fiber allows the reconciliation and rendering to the DOM to be split into two separate phases:
+
+Phase 1: Reconciliation
+
+In the first phase, React creates a list of all changes to be rendered in the UI (an 'effect list', comprising of new and updated components).
+Once the list is fully computed, React will schedule these changes to be executed in the next phase.
+Note that React doesn't make any actual changes in this phase.
+Phase 2: Commit
+
+In phase two, also called 'commit' phase, React tells the DOM to render the effect list that was created in the previous phase.
+While the Reconciliation phase can be interrupted, the Commit phase cannot.
+So via Fiber, React is able to traverse the component tree through a singly linked list tree traversal algorithm. This algorithm can run in an "asynchronous" manner - allowing React to pause and resume work at particular nodes.
 
 ## - Why we need keys in React? When do we need keys in React?
-Lists are an important aspect within your app. Every application is bound to make use of lists in some form or the other. You could have a list of tasks like a calendar app, list of pictures like Instagram, list of items to shop in a shopping cart and so on. The use-cases are numerous. Lists within an application can be performance heavy. Imagine an app with a huge list of videos or pictures and you keep getting thousands more, as you scroll. That could take a toll on the app’s performance.
-Because performance is an important aspect, when you are using lists you need to make sure they are designed for optimal performance. Keys are necessary to improve performance of your React app.
+Keys are necessary to improve performance of your React app.
 Keys help React identify which items have changed, are added, or are removed. To give a unique identity to every element inside the array, a key is required.
 
 ## - Can we use index as keys in React?
