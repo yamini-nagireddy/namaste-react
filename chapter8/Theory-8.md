@@ -97,5 +97,5 @@ If useEffect allowed an async callback function, it would introduce some complex
 
 - Cancellation of Promises: useEffect relies on clean-up functions to cancel any pending operations when the component is unmounted or when the effect is re-run. If an async function is used directly, it could make it harder to guarantee that the cleanup will run at the right time.
 
-However, there are workarounds to use async functions inside useEffect. Instead of declaring the useEffect callback function as async, you can define an inner function inside useEffect, which is async. Since async functions return a Promise, you can use .then to handle any asynchronous logic within the useEffect. Here's an example of how you can do that:
+However, there are workarounds to use async functions inside useEffect. Instead of declaring the useEffect callback function as async, you can define an inner function inside useEffect, which is async. Since async functions return a Promise, you can use .then to handle any asynchronous logic within the useEffect. 
 
