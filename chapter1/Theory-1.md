@@ -39,6 +39,9 @@ On the other hand, the react.production.js file is optimized for performance and
 
 
 ## - What is `async and defer`?
+Async: Scripts are fetched in parallel with HTML parsing, and once scripts are available, they are executed and then after that HTML parsing continues. 
+Defer: Scripts are fetched in parallel with HTML parsing, and no matter when scripts are available, they are executed only after the HTML parsing completes.
+Async doesn't guarantee the order of execution of scripts but defer does. If we have multiple scripts with async tags which are dependent on one another, it doesn't guarante the order of execution of scripts. In this scenario defer tag is preferrable. If there is some script independent(like google angalytics), async is preferrable. 
 Async allows your script to run as soon as it's loaded, without blocking other elements on the page. 
 Defer means your script will only execute after the page has finished loading.
 
